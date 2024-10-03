@@ -5,7 +5,7 @@ public class Alumnos {
         private double estructura;
         private double ingles;
         private double iot;
-         private double promedio;
+        private double promedio;
         //constructor
         public Alumnos(String m, String n){
             this.matricula = m;
@@ -56,8 +56,8 @@ public class Alumnos {
             return promedio;
         }
 
-        public void setPromedio(double promedio) {
-            this.promedio = promedio = (this.estructura + this.ingles + this.iot) / 3;
+        public void setPromedio() {
+            this.promedio  = (this.estructura + this.ingles + this.iot) / 3;
         }
 
         @Override
