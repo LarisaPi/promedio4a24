@@ -36,14 +36,24 @@ public class PromedioGrupo{
             alumnos[i] = a;
         }
      }
+     public static void imprimirAlumnos(){
+        System.out.println("Contenido del arreglo alumnos: ");
+        for(Alumnos a : alumnos){
+            System.out.println("---------------------------------");
+            System.out.println("Información del alumnos: ");
+            System.out.println(a.toString());
+    }
+     }
+     public static double calculadoraPromedioGrupo(){
+        double suma = 0;
+        for(Alumnos a : alumnos){
+            suma +=a.getPromedio();
+        }
+        return (suma / alumnos.length );
+     }
     public static void main(String[] args) throws IOException {
         int n; //tamaño del grupo
-       
-        // double[] calificaciones; //Calificaciones de cada alumno
-        // double suma = 0; // para sumar calificaciones
-        // double promedio; // el promedio del grupo
-
-       
+         double promedio; // el promedio del grupo
 
         System.out.println("Programa que calcula el promedio de un grupo");
         System.out.println("----------------------------------------------");
@@ -54,24 +64,14 @@ public class PromedioGrupo{
 
         //Contruir el arreglo alumnos
         alumnos = new Alumnos[n];
-
-        // calificaciones = new double[n]; //Construccion del arreglo
-        // Pedir calificacion y acumularla
-        // for( int i = 0;i < calificaciones.length;i++){
-        // //     System.out.println("Escribe la calificacion del estudiante[ "+ (i+1)+ "]");
-        // //     entrada = bufer.readLine();
-        // //     calificaciones [i] = Double.parseDouble(entrada);
-        // //     suma += calificaciones[i];
-        // // }
+        //Introducir información de los alumnos
+        leerAlumnos();
+       //Montrar la información 
+       imprimirAlumnos();
         //Obtener el promedio
-        // promedio = suma /n;
-        // System.out.println("----------------------------------------");
-        // System.out.println("Las calificaciones de cada alumno son: ");
-        // for( double calif : calificaciones){
-        //     System.out.println(calif);
-        // System.out.println("----------------------------------------"); 
-        // System.out.println("El promedio de grupo es: " + promedio); 
-        // }
+        promedio = calculadoraPromedioGrupo();
+        System.out.println("----------------------------------------"); 
+        System.out.println("El promedio de grupo es: " + promedio); 
+        }
         
     }
-}
