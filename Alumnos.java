@@ -11,6 +11,10 @@ public class Alumnos {
             this.matricula = m;
             this.nombre = n;
         }
+        //constructor vacío
+        public Alumnos(){
+
+        }
 
         public String getMatricula() {
             return matricula;
@@ -64,7 +68,6 @@ public class Alumnos {
         public String toString() {
             return "Alumnos [matricula=" + matricula + ", nombre=" + nombre + ", promedio=" + promedio + "]";
         }
-        
     }
     
 

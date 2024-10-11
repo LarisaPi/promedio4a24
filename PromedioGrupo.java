@@ -51,27 +51,55 @@ public class PromedioGrupo{
         }
         return (suma / alumnos.length );
      }
+
+    // Método para calcular el promedio de estructuras
+    public static double calcularPromedioEstructuras() {
+        double suma = 0;
+        for (Alumnos a : alumnos) {
+            suma += a.getEstructura();
+        }
+        return (suma / alumnos.length);
+    }
+
+    // Método para calcular el promedio de inglés
+    public static double calcularPromedioIngles() {
+        double suma = 0;
+        for (Alumnos a : alumnos) {
+            suma += a.getIngles();
+        }
+        return (suma / alumnos.length);
+    }
+
+    // Método para calcular el promedio de IoT
+    public static double calcularPromedioIot() {
+        double suma = 0;
+        for (Alumnos a : alumnos) {
+            suma += a.getIot();
+        }
+        return (suma / alumnos.length);
+    }
     public static void main(String[] args) throws IOException {
-        int n; //tamaño del grupo
-         double promedio; // el promedio del grupo
+        int n;
+        double promedioEstructuras, promedioIngles, promedioIot;
 
         System.out.println("Programa que calcula el promedio de un grupo");
         System.out.println("----------------------------------------------");
-        //Recuperando el tamaño del grupo
-        System.out.println("Escribe el numero de alumnos de un grupo: ");
-        entrada = bufer.readLine(); //Lectura del teclado
-        n = Integer.parseInt(entrada); //Conversion de string a int
+        System.out.println("Escribe el número de alumnos de un grupo: ");
+        entrada = bufer.readLine();
+        n = Integer.parseInt(entrada);
 
-        //Contruir el arreglo alumnos
         alumnos = new Alumnos[n];
-        //Introducir información de los alumnos
         leerAlumnos();
-       //Montrar la información 
-       imprimirAlumnos();
-        //Obtener el promedio
-        promedio = calculadoraPromedioGrupo();
-        System.out.println("----------------------------------------"); 
-        System.out.println("El promedio de grupo es: " + promedio); 
-        }
-        
+        imprimirAlumnos();
+
+        // Calcula y muestra los promedios por materia
+        promedioEstructuras = calcularPromedioEstructuras();
+        promedioIngles = calcularPromedioIngles();
+        promedioIot = calcularPromedioIot();
+
+        System.out.println("----------------------------------------");
+        System.out.println("El promedio de estructuras es: " + promedioEstructuras);
+        System.out.println("El promedio de inglés es: " + promedioIngles);
+        System.out.println("El promedio de IoT es: " + promedioIot);
     }
+}
